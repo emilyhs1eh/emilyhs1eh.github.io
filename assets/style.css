@@ -1,0 +1,31 @@
+:root{
+    --font-size:20px;
+    --color:blue;
+    --gutter: calc(var(--font-size)*2);
+
+}
+
+
+@media (min-width:600px){
+    :root{
+        --font-size:32px;
+
+    }
+}
+
+body{
+    font-size: var(--font-size);
+    padding-top: calc(var(gutter)*3);
+    padding-left: calc(var(--gutter));
+    padding-right: calc(var(--gutter)*3);
+    display:flex;
+    flex-direction: column;
+    row-gap: var(--gutter);
+
+}
+
+h1 {
+    font-size: calc(var(--font-size)*3);
+
+
+}
