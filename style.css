@@ -1,82 +1,166 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-/* General Styles */
+
+
+.github-link {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 24px; 
+  z-index: 1000; 
+  color: black;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #FFFAF1;
+
+}
+
+.background {
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  z-index: -1; 
+  background-color: #FFFAF1;
+}
+
+h1{
+  margin-top: 10px;
+  font-size: 22px;
+}
 
 
 body {
-    margin: 0;
-    font-family: 'space grotesk';
-    color: black;
-    min-height: 100vh; 
-    background: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    height: 100vh;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-
-.container {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    /* min-height: 100vh; Remove or adjust this based on content */
-    border: 0.5px solid black;
+  font-family: 'Roboto Mono';
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFAF1;
 }
 
 header {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-footer{
-    margin-left: 10px;
-    display: block;
-    font-size: 18px;
-}
-
-h1 {
-    font-size: 70px;
-
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 80vh;
 }
 
 .project-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 .project-item {
-    font-weight: 500;
-    font-size: 50px;
-    margin-right: 40px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: black; 
-    border: none; 
-    transition: background-color 0.3s ease; 
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  position: absolute;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, filter 0.3s; /* Add filter to transitions */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+ 
 }
 
 .project-item:hover {
-    transform: translateY(-5px);
-    
+  transform: scale(1.1); /* Enlarge on hover */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* Enhanced shadow */
+  background-color: #f0f0f0; /* Change background color on hover */
+  cursor: pointer;
 }
 
+
+.project-item:nth-child(1) {
+  background-image: linear-gradient(to right, #e9efc2, #adadad);
+  top: 50%;
+  left: 50%;
+  transform: translate(-120%, -120%);
+}
+
+.project-item:nth-child(2) {
+  background: linear-gradient(to right, #dae2f8, #d6a4a4);
+  top: 50%;
+  left: 50%;
+  transform: translate(-120%, 20%);
+}
+
+.project-item:nth-child(3) {
+  background: linear-gradient(to right, #fcfcfc, #ffa58a);
+  top: 50%;
+  left: 50%;
+  transform: translate(20%, -120%);
+}
+
+.project-item:nth-child(4) {
+  background: linear-gradient(to right, #f0efef, #d3cde6);
+  top: 50%;
+  left: 50%;
+  transform: translate(20%, 20%);
+}
+
+.project-item:nth-child(5) {
+  background: linear-gradient(to right, #6baac9, #a1ccc6);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Hover Effects */
+.project-item.expanded {
+  transform: scale(8); 
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transition: transform 0.5s ease-in-out, background-color 0.3s;
+  z-index: 10; 
+}
+.project-item:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25); 
+  background-color: #f0f0f0; 
+  cursor: pointer; 
+}
+
+
+footer {
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .github-link {
+    font-size: 18px; 
+  }
+
+
+  footer {
+    position: relative; 
+  }
+}
 
