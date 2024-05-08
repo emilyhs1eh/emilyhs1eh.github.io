@@ -12,6 +12,14 @@
   color: black;
 }
 
+.linkedin-link {
+  position: absolute;
+  top: 20px;      /* Adjust top distance as needed */
+  left: 20px;     /* Adjust left distance as needed */
+  font-size: 24px; /* Adjust icon size as needed */
+  z-index: 1000; 
+  color: black; /* LinkedIn brand color, change if needed */
+}
 
 * {
   margin: 0;
