@@ -14,64 +14,25 @@
     <a href="https://www.linkedin.com/in/emilyhs1eh/" class="linkedin-link" target="_blank">
         <i class="fab fa-linkedin"></i>
     </a>
-    
     <a href="https://github.com/emilyhs1eh" class="github-link" target="_blank">
         <i class="fab fa-github"></i>
     </a>
 
-    <header>
-        <h1>Typography and Interaction</h1>
-    </header>
-
-    <main id="projects-grid" class="project-container">
-        <a href="https://emilyhs1eh.github.io/manuscript-" class="project-item">Project 1 <br>manuscript</a>
-        <a href="https://hannahmariamoran.github.io/spread/" class="project-item">Project 2 <br>spread</a>
-        <a href="https://emilyhs1eh.github.io/binding" class="project-item">Project 3<br>binding</a>
-        <a href="https://emilyhs1eh.github.io/links" class="project-item">Project 4<br> links</a>
-        <a href="https://emilyhs1eh.github.io/functions/" class="project-item">Project 5<br> functions</a>
-    </main>
-
-    <footer>
-        <p>@Emily Hsieh - Spring 2024</p>
-    </footer>
-    
-    <script>
-        document.querySelectorAll('.project-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                const destination = this.getAttribute('href');
-                this.classList.add('expanded');
-                setTimeout(() => {
-                    window.location.href = destination;
-                }, 500);
-            });
-        });
-    </script>
-
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const background = document.getElementById('animatedBackground');
-    const colors = ['#D97A8F', '#8186B3'];
-    let currentColorIndex = 0;
-
-    function setBackground() {
-        // Apply the first color
-        const color1 = colors[currentColorIndex % colors.length];
-        // Apply the second color, ensure it's different
-        const color2 = colors[(currentColorIndex + 1) % colors.length];
-
-        background.style.background = `linear-gradient(${color1}, ${color2})`;
-
-        // Move to the next color for the next transition
-        currentColorIndex++;
-    }
-
-    setBackground(); // Set the initial background
-    setInterval(setBackground, 10000); // Update the background every 10 seconds
-});
-
-    </script>
-
+        <div class="container">
+            <div class="intro">
+                <h2>Welcome to my personal portfolio from the <strong>'Typography & Interaction' </strong>course at Parsons School of Design, a key component of the MPS in Communication Design. This space features a curated selection of projects where I've melded the art of typography with the precision of coding. Dive into my explorations of <strong>HTML, CSS, and JavaScript</strong>, where each project is a step in my ongoing journey to push the boundaries of how text and interaction converge.</h2>
+            </div>
+            <div class="projects">
+                <a href="https://emilyhs1eh.github.io/manuscript-" class="project-item">Project 1 <br>manuscript</a>
+                <a href="https://hannahmariamoran.github.io/spread/" class="project-item">Project 2 <br>spread</a>
+                <a href="https://emilyhs1eh.github.io/binding" class="project-item">Project 3<br>binding</a>
+                <a href="https://emilyhs1eh.github.io/links" class="project-item">Project 4<br> links</a>
+                <a href="https://emilyhs1eh.github.io/functions/" class="project-item">Project 5<br> functions</a>
+            </div>
+        </div>
+        <footer>
+            <p>Emily Hsieh @ Spring 2024</p>
+        </footer>
+            
 </body>
 </html>

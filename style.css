@@ -1,174 +1,152 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #FFFAF1;
+}
 
+body, html {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Space Grotesk', monospace;
+}
+
+.github-link, .linkedin-link {
+  position: fixed;
+  font-size: 24px;
+  z-index: 1000;
+  color: black;
+}
 
 .github-link {
-  position: fixed;
   top: 20px;
   right: 20px;
-  font-size: 24px; 
-  z-index: 1000; 
-  color: black;
 }
 
 .linkedin-link {
-  position: absolute;
-  top: 20px;      /* Adjust top distance as needed */
-  left: 20px;     /* Adjust left distance as needed */
-  font-size: 24px; /* Adjust icon size as needed */
-  z-index: 1000; 
-  color: black; /* LinkedIn brand color, change if needed */
+  top: 20px;
+  left: 20px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #FFFAF1;
-
+.container {
+    display: flex;
+    width: 100vw; /* full viewport width */
+    height: calc(100vh - 40px); /* adjust height considering footer */
+    flex-direction: row; /* align children side by side */
 }
 
-.background {
-  position: fixed;  
-  top: 0;
-  left: 0;
-  width: 100vw; 
-  height: 100vh; 
-  z-index: -1; 
-  background-color: #FFFAF1;
+.intro, .projects {
+    flex: 1; /* flex grow and shrink values are 1, and basis is 0% */
+    overflow: auto; /* allows scrolling if content overflows */
+    padding: 20px; /* provides some spacing inside the containers */
 }
 
-h1{
-  margin-top: 10px;
-  font-size: 22px;
+.intro h2 {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 18px;
+    font-family: 'manrope';
+    font-weight: 400;
+    margin-top: 40%;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
-
-body {
-  font-family: 'Roboto Mono';
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  background-color: #FFFAF1;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100vw;
-  height: 80vh;
-}
-
-.project-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  position: relative;
+.projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
 }
 
 .project-item {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: black;
-  text-decoration: none;
-  font-size: 16px;
-  position: absolute;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, filter 0.3s; /* Add filter to transitions */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
- 
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    position: absolute;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, filter 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
 }
 
 .project-item:hover {
-  transform: scale(1.1); /* Enlarge on hover */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25); /* Enhanced shadow */
-  background-color: #f0f0f0; /* Change background color on hover */
-  cursor: pointer;
+    transform: scale(1.5);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    background-color: #f0f0f0;
 }
 
 
-.project-item:nth-child(1) {
-  background-image: linear-gradient(to right, #e9efc2, #adadad);
-  top: 50%;
-  left: 50%;
-  transform: translate(-120%, -120%);
-}
-
-.project-item:nth-child(2) {
-  background: linear-gradient(to right, #dae2f8, #d6a4a4);
-  top: 50%;
-  left: 50%;
-  transform: translate(-120%, 20%);
-}
-
-.project-item:nth-child(3) {
-  background: linear-gradient(to right, #fcfcfc, #ffa58a);
-  top: 50%;
-  left: 50%;
-  transform: translate(20%, -120%);
-}
-
-.project-item:nth-child(4) {
-  background: linear-gradient(to right, #f0efef, #d3cde6);
-  top: 50%;
-  left: 50%;
-  transform: translate(20%, 20%);
-}
-
-.project-item:nth-child(5) {
-  background: linear-gradient(to right, #6baac9, #a1ccc6);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 
-/* Hover Effects */
-.project-item.expanded {
-  transform: scale(8); 
-  position: fixed; 
-  top: 50%; 
-  left: 50%; 
-  transition: transform 0.5s ease-in-out, background-color 0.3s;
-  z-index: 10; 
-}
-.project-item:hover {
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25); 
-  background-color: #f0f0f0; 
-  cursor: pointer; 
-}
-
+/* Specific styles for each project based on its position */
+.project-item:nth-child(1) { background-image: linear-gradient(to right, #e9efc2, #adadad); top: 50%; left: 50%; transform: translate(-120%, -120%); }
+.project-item:nth-child(2) { background: linear-gradient(to right, #dae2f8, #d6a4a4); top: 50%; left: 50%; transform: translate(-120%, 20%); }
+.project-item:nth-child(3) { background: linear-gradient(to right, #fcfcfc, #ffa58a); top: 50%; left: 50%; transform: translate(20%, -120%); }
+.project-item:nth-child(4) { background: linear-gradient(to right, #f0efef, #d3cde6); top: 50%; left: 50%; transform: translate(20%, 20%); }
+.project-item:nth-child(5) { background: linear-gradient(to right, #6baac9, #a1ccc6); top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
 footer {
-  text-align: center;
-  width: 100%;
-  padding: 10px 0;
-  position: absolute;
-  bottom: 0;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 @media (max-width: 768px) {
-  .github-link {
-    font-size: 18px; 
-  }
+    .container {
+        flex-direction: column;
+    }
 
+    .intro, .projects {
+        flex: 0 0 80%;
+    }
+    
+    .container {
+          flex-direction: column;
+      }
+  
+  
+    .project-item {
+          width: 120px; /* Smaller size for mobile devices */
+          height: 120px; /* Maintain the aspect ratio */
+          top: 10%; /* Centralize vertically */
+          left: 50%; /* Centralize horizontally */
+          transform: translate(-50%, -50%); /* Adjust translate to properly center the items */
+      }
+    
+      footer {
+        position: fixed; /* Make the footer fixed position */
+        bottom: 0; /* Anchor it to the bottom */
+        left: 0; /* Stretch across the screen from the left */
+        width: 100%; /* Full width */
+        height: 50px; /* Set a specific height */
+        z-index: 1000; /* Make sure it stays on top of other content */
+        display: flex;
+        justify-content: center; /* Center the content inside the footer */
+        align-items: center; /* Align items vertically */
+        
 
-  footer {
-    position: relative; 
-  }
-}
+    .container {
+        padding-bottom: 50px; /* Add padding to the bottom of the container */
+    }
 
+    .projects, .intro {
+        height: calc(100vh - 50px); /* Adjust the height of these containers */
+        overflow-y: scroll; /* Allows scrolling within the section */
+    }
+  }}
